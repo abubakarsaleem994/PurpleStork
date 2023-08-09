@@ -1,34 +1,29 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   Pressable,
+  StatusBar,
   Text,
-  TextInput,
   TouchableHighlight,
   TouchableOpacity,
   View,
-  StatusBar,
 } from 'react-native';
 import FastImage from 'react-native-fast-image';
-import {signIn} from '../../../assets/images';
-import {styles} from './styles';
-import {COLORS} from '../../shared/theme/colors';
-import CheckBox from 'react-native-check-box';
-import {
-  emailIcon,
-  eyeoffIcon,
-  lockIcon,
-  phoneIcon,
-  userIcon,
-} from '../../../assets/icons';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {RF, WP} from '../../shared/theme/responsive';
-import {FONTS} from '../../shared/theme/fonts';
+import {signIn} from '../../../assets/images';
+import CustomInput from '../../shared/components/customInput';
+import {COLORS} from '../../shared/theme/colors';
+import {RF} from '../../shared/theme/responsive';
+import {styles} from './styles';
+import {emailIcon, lockIcon} from '../../../assets/icons';
 const Login = ({navigation}: any) => {
-  const [isChecked, setIsChecked] = useState(false);
   return (
     <KeyboardAwareScrollView>
       <View>
-        <StatusBar backgroundColor={COLORS.Purple} />
+        <StatusBar
+          barStyle="dark-content"
+          translucent
+          backgroundColor="transparent"
+        />
         <FastImage
           source={signIn}
           resizeMode={FastImage.resizeMode.stretch}
@@ -42,26 +37,18 @@ const Login = ({navigation}: any) => {
         </Text>
       </View>
       <View style={styles.contentContainer}>
-        <View style={[styles.borderStyle]}>
-          <FastImage source={emailIcon} style={styles.inputIcon} />
-          <TextInput
-            style={styles.textInput}
-            placeholder="Types your email"
-            placeholderTextColor={COLORS.Grey}
-          />
-        </View>
-        <View style={[styles.borderStyle]}>
-          <FastImage source={lockIcon} style={styles.inputIcon} />
-          <TextInput
-            style={styles.textInput}
-            placeholder="Types your password"
-            placeholderTextColor={COLORS.Grey}
-          />
-          <TouchableOpacity style={{marginHorizontal: -30}}>
-            <FastImage source={eyeoffIcon} style={styles.eyeoff} />
-          </TouchableOpacity>
-        </View>
-
+        <CustomInput
+          placeholder="Enter Email"
+          leftIcon={emailIcon}
+          textContentType="emailAddress"
+        />
+        <CustomInput
+          placeholder="Enter Password"
+          leftIcon={lockIcon}
+          isPassword
+          secureTextEntry
+          textContentType="password"
+        />
         <View>
           <TouchableOpacity
             style={styles.forgetpassword}

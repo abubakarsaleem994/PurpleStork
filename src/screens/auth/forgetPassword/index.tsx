@@ -29,7 +29,11 @@ const Login = ({navigation}: any) => {
   return (
     <KeyboardAwareScrollView>
       <View>
-        <StatusBar backgroundColor={COLORS.Purple} />
+        <StatusBar
+          barStyle="dark-content"
+          translucent
+          backgroundColor="transparent"
+        />
         <FastImage
           source={arrowIcon}
           resizeMode={FastImage.resizeMode.stretch}

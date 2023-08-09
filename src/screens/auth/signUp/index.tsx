@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {
   Pressable,
+  StatusBar,
   Text,
   TextInput,
   TouchableHighlight,
@@ -26,6 +27,11 @@ const SignUp = ({navigation}: any) => {
   const [isChecked, setIsChecked] = useState(false);
   return (
     <KeyboardAwareScrollView>
+      <StatusBar
+        barStyle="dark-content"
+        translucent
+        backgroundColor="transparent"
+      />
       <FastImage
         source={signIn}
         resizeMode={FastImage.resizeMode.stretch}
