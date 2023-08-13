@@ -8,4 +8,6 @@ export const COLORS = {
   Purple: '#86108B',
   Silver: '#E9ECF2',
   Dark: '#242B42',
+  Soft_Silver: '#F6F7FA',
+  LIGHT_Grey: '#EDEDED',
 };

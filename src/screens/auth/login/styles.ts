@@ -19,15 +19,18 @@ export const styles = StyleSheet.create({
     color: COLORS.BLACK,
     borderBottomWidth: RF(1),
     width: '90%',
+    height: RF(50),
     marginHorizontal: RF(10),
     borderBottomColor: COLORS.Silver,
     fontFamily: FONTS.Regular,
     fontSize: RF(14),
+    marginLeft: RF(12),
   },
   contentContainer: {
     width: WP(90),
     marginBottom: RF(30),
     marginTop: RF(30),
+    marginLeft: RF(12),
     alignSelf: 'center',
   },
   teststyles: {
@@ -81,6 +84,7 @@ export const styles = StyleSheet.create({
     fontStyle: 'normal',
     fontFamily: FONTS.Regular,
     marginTop: RF(30),
+    marginRight: RF(23),
   },
 
   textbtn: {

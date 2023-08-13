@@ -28,17 +28,17 @@ export const styles = StyleSheet.create({
     fontSize: RF(14),
   },
   contentContainer: {
-    width: WP(90),
+    width: WP(100),
     marginBottom: RF(30),
-    marginTop: RF(45),
-    marginStart: RF(120),
-    alignSelf: 'center',
+    marginTop: RF(10),
+    alignItems: 'center',
   },
   teststyles: {
     color: COLORS.WHITE,
     fontSize: RF(15),
   },
   borderStyle: {
+    marginTop: RF(10),
     flexDirection: 'row',
     alignItems: 'center',
   },

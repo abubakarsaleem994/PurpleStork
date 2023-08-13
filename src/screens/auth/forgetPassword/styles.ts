@@ -50,6 +50,7 @@ export const styles = StyleSheet.create({
   },
   signInBtn: {
     backgroundColor: COLORS.Purple,
+    
     height: RF(48),
     width: WP('90%'),
     alignSelf: 'center',

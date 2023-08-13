@@ -23,6 +23,7 @@ import {
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {RF, WP} from '../../shared/theme/responsive';
 import {FONTS} from '../../shared/theme/fonts';
+import CustomInput from '../../shared/components/customInput';
 const SignUp = ({navigation}: any) => {
   const [isChecked, setIsChecked] = useState(false);
   return (
@@ -44,42 +45,29 @@ const SignUp = ({navigation}: any) => {
         </Text>
       </View>
       <View style={styles.contentContainer}>
-        <View style={[styles.borderStyle]}>
-          <FastImage source={userIcon} style={styles.inputIcon} />
-          <TextInput
-            style={styles.textInput}
-            placeholder="Types your full name"
-            placeholderTextColor={COLORS.Grey}
-          />
-        </View>
+        <CustomInput
+          placeholder="Type your full name"
+          leftIcon={userIcon}
+          textContentType="name"
+        />
 
-        <View style={[styles.borderStyle]}>
-          <FastImage source={emailIcon} style={styles.inputIcon} />
-          <TextInput
-            style={styles.textInput}
-            placeholder="Types your email"
-            placeholderTextColor={COLORS.Grey}
-          />
-        </View>
-        <View style={[styles.borderStyle]}>
-          <FastImage source={lockIcon} style={styles.inputIcon} />
-          <TextInput
-            style={styles.textInput}
-            placeholder="Types your password"
-            placeholderTextColor={COLORS.Grey}
-          />
-          <TouchableOpacity style={{marginHorizontal: -30}}>
-            <FastImage source={eyeoffIcon} style={styles.eyeoff} />
-          </TouchableOpacity>
-        </View>
-        <View style={styles.borderStyle}>
-          <FastImage source={phoneIcon} style={styles.inputIcon} />
-          <TextInput
-            style={styles.textInput}
-            placeholder="Types your phone number (optional)"
-            placeholderTextColor={COLORS.Grey}
-          />
-        </View>
+        <CustomInput
+          placeholder="Type your email"
+          leftIcon={emailIcon}
+          textContentType="emailAddress"
+        />
+        <CustomInput
+          placeholder="Type your password"
+          leftIcon={lockIcon}
+          isPassword
+          secureTextEntry
+          textContentType="password"
+        />
+        <CustomInput
+          placeholder="Type your phone number (optional)"
+          leftIcon={phoneIcon}
+          textContentType="telephoneNumber"
+        />
         <View
           style={{flexDirection: 'row', flexWrap: 'wrap', marginTop: RF(30)}}>
           <CheckBox
@@ -134,7 +122,7 @@ const SignUp = ({navigation}: any) => {
           marginTop: RF(25),
           marginBottom: RF(64),
         }}>
-        <Text style={{color: COLORS.BLACK}}>have an account?</Text>
+        <Text style={{color: COLORS.Grey}}>have an account?</Text>
         <Pressable onPress={() => navigation.navigate('Login')}>
           <Text style={{color: COLORS.Purple}}>Sign In</Text>
         </Pressable>

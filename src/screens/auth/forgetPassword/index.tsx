@@ -24,6 +24,7 @@ import {
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {RF, WP} from '../../shared/theme/responsive';
 import {FONTS} from '../../shared/theme/fonts';
+import CustomInput from '../../shared/components/customInput';
 const Login = ({navigation}: any) => {
   const [isChecked, setIsChecked] = useState(false);
   return (
@@ -34,11 +35,13 @@ const Login = ({navigation}: any) => {
           translucent
           backgroundColor="transparent"
         />
-        <FastImage
-          source={arrowIcon}
-          resizeMode={FastImage.resizeMode.stretch}
-          style={styles.arrow}
-        />
+        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+          <FastImage
+            source={arrowIcon}
+            resizeMode={FastImage.resizeMode.stretch}
+            style={styles.arrow}
+          />
+        </TouchableOpacity>
       </View>
       <View style={styles.textView}>
         <Text style={styles.textSignUp}>Reset Password</Text>
@@ -47,14 +50,11 @@ const Login = ({navigation}: any) => {
         </Text>
       </View>
       <View style={styles.contentContainer}>
-        <View style={[styles.borderStyle]}>
-          <FastImage source={emailIcon} style={styles.inputIcon} />
-          <TextInput
-            style={styles.textInput}
-            placeholder="Types your email"
-            placeholderTextColor={COLORS.Grey}
-          />
-        </View>
+        <CustomInput
+          placeholder="Enter Email"
+          leftIcon={emailIcon}
+          textContentType="emailAddress"
+        />
       </View>
       <View>
         <TouchableHighlight

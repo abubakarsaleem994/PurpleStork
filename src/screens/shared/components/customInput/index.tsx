@@ -43,7 +43,7 @@ const CustomInput = (props: Partial<Props>) => {
           onChangeText={onChangeText}
         />
         {isPassword ? (
-          <TouchableOpacity style={{marginHorizontal: RF(-30)}}>
+          <TouchableOpacity style={{marginHorizontal: RF(-52)}}>
             <FastImage source={eyeoffIcon} style={styles.eyeoff} />
           </TouchableOpacity>
         ) : null}

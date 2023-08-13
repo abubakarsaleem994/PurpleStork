@@ -1,16 +1,16 @@
-import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Login from './src/screens/auth/login';
-import SignUp from './src/screens/auth/signUp';
-import ForgetPassword from './src/screens/auth/forgetPassword';
-import OtpVerify from './src/screens/auth/otpVerify';
+import * as React from 'react';
+import 'react-native-gesture-handler';
+import MyDrawer from './src/Navigation/drawer';
 import ChangePassword from './src/screens/auth/changePassword';
+import ForgetPassword from './src/screens/auth/forgetPassword';
+import Login from './src/screens/auth/login';
+import OtpVerify from './src/screens/auth/otpVerify';
 import passwordUpdate from './src/screens/auth/passwordUpdate';
-import ForUser from './src/screens/general/CustomerScreen/forUser';
+import SignUp from './src/screens/auth/signUp';
 
 const Stack = createNativeStackNavigator();
-
 const App = () => {
   return (
     <NavigationContainer>
@@ -21,7 +21,7 @@ const App = () => {
         <Stack.Screen name="OtpVerify" component={OtpVerify} />
         <Stack.Screen name="CreateNewPassword" component={ChangePassword} />
         <Stack.Screen name="PasswordUpdate" component={passwordUpdate} />
-        <Stack.Screen name="ForUser" component={ForUser} />
+        <Stack.Screen name="ForUser" component={MyDrawer} />
       </Stack.Navigator>
     </NavigationContainer>
   );

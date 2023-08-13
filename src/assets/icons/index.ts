@@ -6,6 +6,13 @@ const eyeoffIcon = require('./eye-off.png');
 const arrowIcon = require('./arrow-left.png');
 const eyeIcon = require('./eye.png');
 const successIcon = require('./succesIcon.png');
+const iconPrivacyPolicy = require('./iconsPrivacyPolicy.png');
+const loginIcon = require('./log-out.png');
+const acrossIcon = require('./acrossIcon.png');
+const chevronIcon = require('./chevron-right.png');
+const logoIcon = require('./logo.png');
+const calendarIcon = require('./ic-calendar.png');
+const arrowLeftIcon = require('./arrowLeft.png');
 export {
   emailIcon,
   lockIcon,
@@ -15,4 +22,11 @@ export {
   eyeoffIcon,
   arrowIcon,
   successIcon,
+  iconPrivacyPolicy,
+  loginIcon,
+  acrossIcon,
+  chevronIcon,
+  logoIcon,
+  calendarIcon,
+  arrowLeftIcon,
 };
