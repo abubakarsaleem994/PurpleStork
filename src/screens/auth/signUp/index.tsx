@@ -112,9 +112,13 @@ const SignUp = ({navigation}: any) => {
         </View>
       </View>
 
-      <TouchableHighlight style={styles.signUpBtn}>
+      <Pressable
+        style={styles.signUpBtn}
+        onPress={() => {
+          navigation.navigate('Login');
+        }}>
         <Text style={styles.teststyles}>Sign Up</Text>
-      </TouchableHighlight>
+      </Pressable>
       <View
         style={{
           alignSelf: 'center',

@@ -57,11 +57,11 @@ const Login = ({navigation}: any) => {
         />
       </View>
       <View>
-        <TouchableHighlight
+        <Pressable
           style={styles.signInBtn}
           onPress={() => navigation.navigate('OtpVerify')}>
           <Text style={styles.teststyles}>Send Verification Code</Text>
-        </TouchableHighlight>
+        </Pressable>
       </View>
     </KeyboardAwareScrollView>
   );

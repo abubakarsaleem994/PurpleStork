@@ -9,7 +9,9 @@ import Login from './src/screens/auth/login';
 import OtpVerify from './src/screens/auth/otpVerify';
 import passwordUpdate from './src/screens/auth/passwordUpdate';
 import SignUp from './src/screens/auth/signUp';
-
+import DriverScreen from './src/screens/general/driverScreen';
+import CustomerScreen from './src/screens/general/customerScreen';
+import MapScreen from './src/screens/general/mapScreen';
 const Stack = createNativeStackNavigator();
 const App = () => {
   return (
@@ -22,6 +24,11 @@ const App = () => {
         <Stack.Screen name="CreateNewPassword" component={ChangePassword} />
         <Stack.Screen name="PasswordUpdate" component={passwordUpdate} />
         <Stack.Screen name="ForUser" component={MyDrawer} />
+        <Stack.Screen name="Driver" component={DriverScreen} />
+        <Stack.Screen name="Custom" component={CustomerScreen} />
+        <Stack.Screen name="Map" component={MapScreen} />
+
+       
       </Stack.Navigator>
     </NavigationContainer>
   );

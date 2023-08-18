@@ -29,7 +29,7 @@ const PasswordUpdate = ({navigation}: any) => {
           <FastImage source={successIcon} style={styles.successIcon} />
         </View>
 
-         <View style={styles.textView}>
+        <View style={styles.textView}>
           <Text style={styles.textResetPassword}>Password Changed</Text>
           <Text style={styles.textshow}>
             Password changed successfully, you can login again with a new
@@ -38,11 +38,11 @@ const PasswordUpdate = ({navigation}: any) => {
         </View>
 
         <View>
-          <TouchableHighlight
+          <Pressable
             onPress={() => navigation.navigate('Login')}
             style={styles.LoginNow}>
             <Text style={styles.teststyles}>Login Now</Text>
-          </TouchableHighlight>
+          </Pressable>
         </View>
       </KeyboardAwareScrollView>
     </View>

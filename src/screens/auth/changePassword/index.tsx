@@ -58,11 +58,11 @@ const ChangePassword = ({navigation}: any) => {
         />
       </View>
       <View>
-        <TouchableHighlight
+        <TouchableOpacity
           style={styles.signInBtn}
           onPress={() => navigation.navigate('PasswordUpdate')}>
           <Text style={styles.teststyles}>Confirm New Password</Text>
-        </TouchableHighlight>
+        </TouchableOpacity>
       </View>
     </KeyboardAwareScrollView>
   );

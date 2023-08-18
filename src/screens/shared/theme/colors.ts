@@ -8,6 +8,9 @@ export const COLORS = {
   Purple: '#86108B',
   Silver: '#E9ECF2',
   Dark: '#242B42',
+  bgcolorCheckBox: '#EDEDED',
   Soft_Silver: '#F6F7FA',
   LIGHT_Grey: '#EDEDED',
+  GreyScale: '#E2E8F0',
+  bgColorChecked: '#86108B',
 };

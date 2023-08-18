@@ -3,7 +3,7 @@ import React from 'react';
 import {StatusBar, Text, TouchableOpacity, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import {acrossIcon, iconPrivacyPolicy, loginIcon} from '../assets/icons';
-import CustomerScreen from '../screens/general/CustomerScreen';
+import CustomerScreen from '../screens/general/driverScreen';
 import Privacy from '../screens/general/privacy Policy';
 import TermOfServices from '../screens/general/termOfServices';
 import CustomDrawer from '../screens/shared/components/customDrawer';
@@ -23,12 +23,10 @@ function CustomDrawerContent({navigation}: any) {
         backgroundColor: COLORS.Purple,
         flex: 1,
       }}>
-      <StatusBar barStyle="light-content" backgroundColor={COLORS.Purple} />
       <View style={{marginTop: RF(68)}}>
         <View style={styles.textView}>
           <Text style={styles.text}>My Profile</Text>
-          <TouchableOpacity
-            onPress={() => navigation.navigate('Privacy Policy')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Customer')}>
             <FastImage
               source={acrossIcon}
               resizeMode={FastImage.resizeMode.stretch}

@@ -13,6 +13,8 @@ const chevronIcon = require('./chevron-right.png');
 const logoIcon = require('./logo.png');
 const calendarIcon = require('./ic-calendar.png');
 const arrowLeftIcon = require('./arrowLeft.png');
+const arrowChevronIcon = require('./chevronDown.png');
+const checkIcon = require('./check.png');
 export {
   emailIcon,
   lockIcon,
@@ -29,4 +31,6 @@ export {
   logoIcon,
   calendarIcon,
   arrowLeftIcon,
+  arrowChevronIcon,
+  checkIcon,
 };

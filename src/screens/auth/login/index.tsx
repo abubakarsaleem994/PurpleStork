@@ -58,11 +58,11 @@ const Login = ({navigation}: any) => {
         </View>
       </View>
       <View>
-        <TouchableHighlight
+        <Pressable
           style={styles.signInBtn}
           onPress={() => navigation.navigate('ForUser')}>
           <Text style={styles.teststyles}>Sign In</Text>
-        </TouchableHighlight>
+        </Pressable>
       </View>
 
       <View
@@ -74,7 +74,10 @@ const Login = ({navigation}: any) => {
         }}>
         <Text style={{color: COLORS.BLACK}}>have an account?</Text>
         <Pressable onPress={() => navigation.navigate('SignUp')}>
-          <Text style={{color: COLORS.Purple}}>Sign In</Text>
+          <Text style={{color: COLORS.Purple}}>Sign Up</Text>
+        </Pressable>
+        <Pressable onPress={() => navigation.navigate('Map')}>
+          <Text style={{color: COLORS.GREEN}}>Map</Text>
         </Pressable>
       </View>
     </KeyboardAwareScrollView>

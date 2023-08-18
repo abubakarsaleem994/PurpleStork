@@ -1,11 +1,5 @@
 import React, {useState} from 'react';
-import {
-  StatusBar,
-  Text,
-  TouchableHighlight,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Pressable, StatusBar, Text, TouchableOpacity, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {arrowIcon} from '../../../assets/icons';
@@ -49,6 +43,7 @@ const OtpVerify = ({navigation}: any) => {
           autoFocusOnLoad
           codeInputFieldStyle={{
             borderRadius: 100,
+            borderColor: COLORS.Purple,
             height: RF(56),
             width: RF(56),
           }}
@@ -68,11 +63,11 @@ const OtpVerify = ({navigation}: any) => {
         </View>
       </View>
       <View>
-        <TouchableHighlight
+        <Pressable
           style={styles.signInBtn}
           onPress={() => navigation.navigate('CreateNewPassword')}>
           <Text style={styles.teststyles}>Continue</Text>
-        </TouchableHighlight>
+        </Pressable>
       </View>
     </KeyboardAwareScrollView>
   );
