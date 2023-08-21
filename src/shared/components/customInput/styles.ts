@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
-import {RF, WP} from '../../../shared/theme/responsive';
-import {COLORS} from '../../../shared/theme/colors';
-import {FONTS} from '../../../shared/theme/fonts';
+import {RF, WP} from '../../theme/responsive';
+import {COLORS} from '../../theme/colors';
+import {FONTS} from '../../theme/fonts';
 
 const styles = StyleSheet.create({
   borderStyle: {

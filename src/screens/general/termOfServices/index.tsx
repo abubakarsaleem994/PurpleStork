@@ -3,9 +3,9 @@ import {StatusBar, Text, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import {arrowIcon, calendarIcon, logoIcon} from '../../../assets/icons';
-import {COLORS} from '../../shared/theme/colors';
-import {FONTS} from '../../shared/theme/fonts';
-import {RF, WP} from '../../shared/theme/responsive';
+import {COLORS} from '../../../shared/theme/colors';
+import {FONTS} from '../../../shared/theme/fonts';
+import {RF, WP} from '../../../shared/theme/responsive';
 import {styles} from './styles';
 import {SafeAreaView} from 'react-native-safe-area-context';
 

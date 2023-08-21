@@ -10,10 +10,10 @@ import {
 import FastImage from 'react-native-fast-image';
 import {signIn} from '../../../assets/images';
 import {styles} from './styles';
-import {COLORS} from '../../shared/theme/colors';
+import {COLORS} from '../../../shared/theme/colors';
 import {successIcon} from '../../../assets/icons';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {RF, WP} from '../../shared/theme/responsive';
+import {RF, WP} from '../../../shared/theme/responsive';
 import {StatusBar} from 'react-native';
 const PasswordUpdate = ({navigation}: any) => {
   const {Purple} = COLORS;
@@ -37,13 +37,11 @@ const PasswordUpdate = ({navigation}: any) => {
           </Text>
         </View>
 
-        <View>
-          <Pressable
-            onPress={() => navigation.navigate('Login')}
-            style={styles.LoginNow}>
-            <Text style={styles.teststyles}>Login Now</Text>
-          </Pressable>
-        </View>
+        <Pressable
+          onPress={() => navigation.navigate('Login')}
+          style={styles.LoginNow}>
+          <Text style={styles.teststyles}>Login Now</Text>
+        </Pressable>
       </KeyboardAwareScrollView>
     </View>
   );

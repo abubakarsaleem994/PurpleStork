@@ -1,17 +1,14 @@
 import React, {useState} from 'react';
-import {Pressable, Text, TouchableOpacity} from 'react-native';
-import {StatusBar, View} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import {Pressable, StatusBar, Text, TouchableOpacity, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
-import {arrowChevronIcon, arrowLeftIcon} from '../../../assets/icons';
-import {styles} from './styles';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {arrowChevronIcon, hammburgerIcon} from '../../../assets/icons';
 import CustomersCards from './data';
-import {RF} from '../../shared/theme/responsive';
-import {COLORS} from '../../shared/theme/colors';
+import {styles} from './styles';
 
 const DriverScreen = ({navigation}: any) => {
   const [isPending, setIsPending] = useState(true);
-  
+
   return (
     <SafeAreaView style={styles.main}>
       <StatusBar
@@ -24,7 +21,10 @@ const DriverScreen = ({navigation}: any) => {
         <Text style={styles.coustomerText}>Customers</Text>
 
         <TouchableOpacity onPress={() => navigation.openDrawer()}>
-          <FastImage source={arrowLeftIcon} style={styles.arrowLeftIconImage} />
+          <FastImage
+            source={hammburgerIcon}
+            style={styles.arrowLeftIconImage}
+          />
         </TouchableOpacity>
       </View>
       <View style={styles.peddingView}>
@@ -56,7 +56,6 @@ const DriverScreen = ({navigation}: any) => {
             }>
             Completed
           </Text>
-           
         </Pressable>
       </View>
       {isPending ? (

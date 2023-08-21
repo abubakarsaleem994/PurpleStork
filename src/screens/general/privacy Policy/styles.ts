@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {RF} from '../../shared/theme/responsive';
+import {RF} from '../../../shared/theme/responsive';
 
 export const styles = StyleSheet.create({
   arrowContainer: {

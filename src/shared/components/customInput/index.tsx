@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   TextInput,
   TextInputProps,
@@ -7,8 +7,8 @@ import {
   ViewStyle,
 } from 'react-native';
 import FastImage from 'react-native-fast-image';
-import {eyeoffIcon} from '../../../../assets/icons';
-import {styles} from '../../../auth/login/styles';
+import {eyeIcon, eyeoffIcon} from '../../../assets/icons';
+import {styles} from '../../../screens/auth/login/styles';
 import {COLORS} from '../../theme/colors';
 import {RF} from '../../theme/responsive';
 
@@ -25,9 +25,10 @@ const CustomInput = (props: Partial<Props>) => {
     textContentType,
     isPassword,
     leftIcon,
-    secureTextEntry,
     onChangeText,
+    secureTextEntry,
   } = props;
+  const [isSecureEntry, setIsSecureEntry] = useState(secureTextEntry);
 
   return (
     <>
@@ -39,12 +40,19 @@ const CustomInput = (props: Partial<Props>) => {
           placeholder={placeholder}
           placeholderTextColor={COLORS.Grey}
           textContentType={textContentType}
-          secureTextEntry={secureTextEntry}
+          secureTextEntry={isSecureEntry}
           onChangeText={onChangeText}
         />
         {isPassword ? (
-          <TouchableOpacity style={{marginHorizontal: RF(-52)}}>
-            <FastImage source={eyeoffIcon} style={styles.eyeoff} />
+          <TouchableOpacity
+            onPress={() => {
+              setIsSecureEntry(show => !show);
+            }}
+            style={{marginHorizontal: RF(-52)}}>
+            <FastImage
+              source={isSecureEntry ? eyeoffIcon : eyeIcon}
+              style={styles.eyeoff}
+            />
           </TouchableOpacity>
         ) : null}
       </View>

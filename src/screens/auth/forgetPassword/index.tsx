@@ -1,32 +1,12 @@
-import React, {useState} from 'react';
-import {
-  Pressable,
-  Text,
-  TextInput,
-  TouchableHighlight,
-  TouchableOpacity,
-  View,
-  StatusBar,
-} from 'react-native';
+import React from 'react';
+import {Pressable, StatusBar, Text, TouchableOpacity, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
-import {signIn} from '../../../assets/images';
-import {styles} from './styles';
-import {COLORS} from '../../shared/theme/colors';
-import CheckBox from 'react-native-check-box';
-import {
-  arrowIcon,
-  emailIcon,
-  eyeoffIcon,
-  lockIcon,
-  phoneIcon,
-  userIcon,
-} from '../../../assets/icons';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {RF, WP} from '../../shared/theme/responsive';
-import {FONTS} from '../../shared/theme/fonts';
-import CustomInput from '../../shared/components/customInput';
-const Login = ({navigation}: any) => {
-  const [isChecked, setIsChecked] = useState(false);
+import {arrowIcon, emailIcon} from '../../../assets/icons';
+import CustomInput from '../../../shared/components/customInput';
+import {COLORS} from '../../../shared/theme/colors';
+import {styles} from './styles';
+const ForgetPassword = ({navigation}: any) => {
   return (
     <KeyboardAwareScrollView>
       <View>
@@ -56,14 +36,13 @@ const Login = ({navigation}: any) => {
           textContentType="emailAddress"
         />
       </View>
-      <View>
-        <Pressable
-          style={styles.signInBtn}
-          onPress={() => navigation.navigate('OtpVerify')}>
-          <Text style={styles.teststyles}>Send Verification Code</Text>
-        </Pressable>
-      </View>
+
+      <Pressable
+        style={styles.signInBtn}
+        onPress={() => navigation.navigate('OtpVerify')}>
+        <Text style={styles.teststyles}>Send Verification Code</Text>
+      </Pressable>
     </KeyboardAwareScrollView>
   );
 };
-export default Login;
+export default ForgetPassword;

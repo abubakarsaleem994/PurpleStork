@@ -12,7 +12,7 @@ const acrossIcon = require('./acrossIcon.png');
 const chevronIcon = require('./chevron-right.png');
 const logoIcon = require('./logo.png');
 const calendarIcon = require('./ic-calendar.png');
-const arrowLeftIcon = require('./arrowLeft.png');
+const hammburgerIcon = require('./hamburger.png');
 const arrowChevronIcon = require('./chevronDown.png');
 const checkIcon = require('./check.png');
 export {
@@ -30,7 +30,7 @@ export {
   chevronIcon,
   logoIcon,
   calendarIcon,
-  arrowLeftIcon,
+  hammburgerIcon,
   arrowChevronIcon,
   checkIcon,
 };
