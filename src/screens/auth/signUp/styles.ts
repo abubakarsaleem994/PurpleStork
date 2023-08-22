@@ -63,5 +63,33 @@ export const styles = StyleSheet.create({
     fontFamily: FONTS.BOLD,
     marginHorizontal: RF(30),
   },
-  checkBox1: {color: COLORS.Purple, fontFamily: FONTS.BOLD},
+  checkedStyle: {
+    borderWidth: RF(2),
+    borderColor: COLORS.Purple,
+  },
+  unCheckedStyle: {
+    borderWidth: RF(2),
+    borderColor: COLORS.Grey,
+  },
+  showText: {color: COLORS.Grey, marginVertical: 12},
+  checkBoxContainer: {
+    flex: 9,
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    justifyContent: 'flex-start',
+    flexWrap: 'wrap',
+    height: '100%',
+  },
+  checkBoxText: {
+    fontSize: RF(14),
+    color: COLORS.Grey,
+  },
+  showSignUpText: {
+    alignSelf: 'center',
+    flexDirection: 'row',
+    marginTop: RF(25),
+    marginBottom: RF(64),
+  },
+  signInColor: {color: COLORS.Purple},
+  showSignUpText1: {color: COLORS.Grey},
 });

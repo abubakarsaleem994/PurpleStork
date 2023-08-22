@@ -1,10 +1,8 @@
-import React, {useState} from 'react';
-import {Pressable, Text, TouchableOpacity, View} from 'react-native';
+import React from 'react';
+import {Text, View} from 'react-native';
 import {RF} from '../../theme/responsive';
+import CustomCheckbox from '../customCheckbox';
 import {styles} from './styles';
-import FastImage from 'react-native-fast-image';
-import {checkIcon, successIcon} from '../../../assets/icons';
-import {ScrollView} from 'react-native-gesture-handler';
 
 const CustomerCard = ({
   id,
@@ -23,20 +21,7 @@ const CustomerCard = ({
 }) => {
   return (
     <View style={styles.mainView}>
-      <Pressable
-        onPress={onpress}
-        style={
-          !completed
-            ? styles.nonSelectedcheckBoxView
-            : styles.selectedcheckBoxView
-        }>
-        {completed && (
-          <FastImage
-            source={checkIcon}
-            style={{width: RF(13), height: RF(11), marginBottom: RF(1)}}
-          />
-        )}
-      </Pressable>
+      <CustomCheckbox isChecked={completed} onPress={onpress} containerStyle={styles.checkboxContainer}/>
       <View style={styles.textView}>
         <Text style={styles.nameText}>{name}</Text>
         <Text style={styles.phoneText}>{phone}</Text>

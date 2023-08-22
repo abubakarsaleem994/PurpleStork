@@ -8,9 +8,10 @@ import {
 } from 'react-native';
 import FastImage from 'react-native-fast-image';
 import {eyeIcon, eyeoffIcon} from '../../../assets/icons';
-import {styles} from '../../../screens/auth/login/styles';
+
 import {COLORS} from '../../theme/colors';
 import {RF} from '../../theme/responsive';
+import styles from './styles';
 
 interface Props extends TextInputProps {
   containerStyle: ViewStyle;

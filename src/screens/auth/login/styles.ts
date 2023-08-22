@@ -19,7 +19,6 @@ export const styles = StyleSheet.create({
     color: COLORS.BLACK,
     borderBottomWidth: RF(1),
     width: '90%',
-    height: RF(50),
     marginHorizontal: RF(10),
     borderBottomColor: COLORS.Silver,
     fontFamily: FONTS.Regular,
@@ -57,26 +56,9 @@ export const styles = StyleSheet.create({
     marginTop: RF(50),
     borderRadius: RF(10),
   },
-  //  signInBtn: {
-  //   backgroundColor: COLORS.Purple,
-  //   margin: RF(10),
-  //   gap: RF(10),
-  //   width: RF(330),
-  //   height: RF(48),
-  //   paddingTop: RF(10),
-  //   paddingBottom: RF(10),
-  //   paddingHorizontal: RF(28),
-  //   paddingVertical: RF(28),
-  //   borderRadius: RF(8),
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  //   flexShrink: RF(0),
-  //   display: 'flex',
-  // },
-
   eyeoff: {
-    height: RF(20),
-    width: RF(18),
+    height: RF(22),
+    width: RF(22),
   },
   forgetpassword: {
     alignItems: 'flex-end',
@@ -85,6 +67,7 @@ export const styles = StyleSheet.create({
     fontFamily: FONTS.Regular,
     marginTop: RF(30),
     marginRight: RF(23),
+    alignSelf: 'flex-end',
   },
 
   textbtn: {
@@ -93,4 +76,11 @@ export const styles = StyleSheet.create({
     marginHorizontal: RF(30),
   },
   checkBox1: {color: COLORS.Purple, fontFamily: FONTS.BOLD},
+  showTextView: {
+    alignSelf: 'center',
+    flexDirection: 'row',
+    marginTop: RF(25),
+    marginBottom: RF(64),
+  },
+  textColor: {color: COLORS.BLACK},
 });

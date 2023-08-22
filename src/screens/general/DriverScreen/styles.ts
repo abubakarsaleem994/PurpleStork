@@ -97,4 +97,5 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: RF(10),
   },
+  container: {flex: 1, paddingBottom: 20},
 });

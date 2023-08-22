@@ -1,24 +1,16 @@
 import React from 'react';
-import {
-  Pressable,
-  Text,
-  TextInput,
-  TouchableHighlight,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Pressable, Text, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
-import {signIn} from '../../../assets/images';
 import {styles} from './styles';
 import {COLORS} from '../../../shared/theme/colors';
 import {successIcon} from '../../../assets/icons';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {RF, WP} from '../../../shared/theme/responsive';
 import {StatusBar} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 const PasswordUpdate = ({navigation}: any) => {
   const {Purple} = COLORS;
   return (
-    <View style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1}}>
       <KeyboardAwareScrollView>
         <StatusBar
           barStyle="dark-content"
@@ -43,7 +35,7 @@ const PasswordUpdate = ({navigation}: any) => {
           <Text style={styles.teststyles}>Login Now</Text>
         </Pressable>
       </KeyboardAwareScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 export default PasswordUpdate;

@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
     width: RF(20),
   },
   eyeoff: {
-    height: RF(20),
-    width: RF(18),
+    height: RF(22),
+    width: RF(22),
   },
   textInput: {
     color: COLORS.BLACK,
@@ -28,3 +28,5 @@ const styles = StyleSheet.create({
     fontSize: RF(14),
   },
 });
+
+export default styles;

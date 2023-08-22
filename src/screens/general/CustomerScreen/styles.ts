@@ -3,6 +3,11 @@ import {COLORS} from '../../../shared/theme/colors';
 import {HP, RF, WP} from '../../../shared/theme/responsive';
 
 export const styles = StyleSheet.create({
+  customerstyles: {
+    backgroundColor: COLORS.GREEN,
+    flex: 1,
+    position: 'relative',
+  },
   textColor: {
     color: COLORS.BLACK,
     alignContent: 'center',

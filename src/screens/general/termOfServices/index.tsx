@@ -13,15 +13,7 @@ const TermOfServices = ({navigation}: any) => {
   return (
     <SafeAreaView>
       <StatusBar barStyle="dark-content" backgroundColor={'transparent'} />
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          marginTop: RF(20),
-          marginHorizontal: RF(20),
-          width: WP(55),
-          justifyContent: 'space-between',
-        }}>
+      <View style={styles.mainView}>
         <TouchableOpacity
           onPress={() => {
             navigation.openDrawer();
@@ -33,48 +25,17 @@ const TermOfServices = ({navigation}: any) => {
             style={styles.arrow}
           />
         </TouchableOpacity>
-        <FastImage source={logoIcon} style={{width: RF(75), height: RF(40)}} />
+        <FastImage source={logoIcon} style={styles.image} />
       </View>
-      <View
-        style={{
-          marginTop: RF(32),
-          marginHorizontal: RF(20),
-        }}>
-        <Text
-          style={{
-            color: COLORS.BLACK,
-            fontSize: RF(24),
-            fontFamily: FONTS.BOLD,
-          }}>
-          Terms of Services
-        </Text>
-        <View
-          style={{
-            borderRadius: RF(8),
-            height: RF(26),
-            marginTop: RF(12),
-            flexDirection: 'row',
-            width: RF(123),
-            backgroundColor: 'rgba(134,16,139,0.1)',
-            alignItems: 'center',
-            justifyContent: 'space-around',
-          }}>
-          <FastImage
-            source={calendarIcon}
-            style={{width: RF(16), height: RF(16)}}
-          />
-          <Text
-            style={{
-              fontSize: RF(12),
-              color: COLORS.BLACK,
-              marginRight: RF(16),
-            }}>
-            Aug 11, 2023
-          </Text>
+      <View style={styles.textView}>
+        <Text style={styles.showText}>Terms of Services</Text>
+        <View style={styles.calendarView}>
+          <FastImage source={calendarIcon} style={styles.calendarImage} />
+          <Text style={styles.showDate}>Aug 11, 2023</Text>
         </View>
 
-        <ScrollView style={{marginTop: RF(30)}}>
-          <Text style={{color: COLORS.Grey, fontSize: RF(14)}}>
+        <ScrollView style={styles.scrollView}>
+          <Text style={styles.showTextParagraph}>
             Not everyone knows how to make a Privacy Policy agreement,
             especially with CCPA or GDPR or CalOPPA or PIPEDA or Australia's
             Privacy Act provisions. If you are not a lawyer or someone who is

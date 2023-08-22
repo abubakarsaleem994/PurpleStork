@@ -10,8 +10,7 @@ import {hammburgerIcon} from '../../../assets/icons';
 const CustomerScreen = ({navigation}: any) => {
   return (
     <>
-      <SafeAreaView
-        style={{backgroundColor: COLORS.GREEN, flex: 1, position: 'relative'}}>
+      <SafeAreaView style={styles.customerstyles}>
         <StatusBar
           barStyle="dark-content"
           translucent

@@ -2,6 +2,7 @@ import React, {useRef, useState} from 'react';
 import {View, Text, FlatList} from 'react-native';
 import CustomerCard from '../../../shared/components/customerCard';
 import CustomAlert from '../../../shared/components/customAlert';
+import {styles} from './styles';
 const CustomersCards = ({completed}: {completed: boolean}) => {
   const [pendingCards, setPendingCard] = useState([
     {
@@ -123,7 +124,7 @@ const CustomersCards = ({completed}: {completed: boolean}) => {
     }
   };
   return (
-    <View style={{flex: 1, paddingBottom: 20}}>
+    <View style={styles.container}>
       <FlatList
         keyExtractor={(_, index) => String(_.id)}
         data={completed ? completedCards : pendingCards}
