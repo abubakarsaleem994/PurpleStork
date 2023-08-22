@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
-import {RF, WP} from '../screens/shared/theme/responsive';
-import {COLORS} from '../screens/shared/theme/colors';
-import {FONTS} from '../screens/shared/theme/fonts';
+import {RF, WP} from '../shared/theme/responsive';
+import {COLORS} from '../shared/theme/colors';
+import {FONTS} from '../shared/theme/fonts';
 
 export const styles = StyleSheet.create({
   crossIcon: {
@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
   },
 
   textView: {
-    marginTop: RF(8),
+    marginTop: RF(20),
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginHorizontal: RF(16),

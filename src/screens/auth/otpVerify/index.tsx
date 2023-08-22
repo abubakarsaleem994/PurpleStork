@@ -3,10 +3,10 @@ import {Pressable, StatusBar, Text, TouchableOpacity, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {arrowIcon} from '../../../assets/icons';
-import {COLORS} from '../../shared/theme/colors';
+import {COLORS} from '../../../shared/theme/colors';
 import {styles} from './styles';
 import OTPInputView from '@twotalltotems/react-native-otp-input';
-import {RF} from '../../shared/theme/responsive';
+import {RF} from '../../../shared/theme/responsive';
 const OtpVerify = ({navigation}: any) => {
   return (
     <KeyboardAwareScrollView>
@@ -62,13 +62,12 @@ const OtpVerify = ({navigation}: any) => {
           <Text style={{color: COLORS.BLACK}}>00:48</Text>
         </View>
       </View>
-      <View>
-        <Pressable
-          style={styles.signInBtn}
-          onPress={() => navigation.navigate('CreateNewPassword')}>
-          <Text style={styles.teststyles}>Continue</Text>
-        </Pressable>
-      </View>
+
+      <Pressable
+        style={styles.signInBtn}
+        onPress={() => navigation.navigate('CreateNewPassword')}>
+        <Text style={styles.teststyles}>Continue</Text>
+      </Pressable>
     </KeyboardAwareScrollView>
   );
 };

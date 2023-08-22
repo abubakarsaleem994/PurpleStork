@@ -3,8 +3,8 @@ import {Pressable, Text, TouchableOpacity, View} from 'react-native';
 import {RF} from '../../theme/responsive';
 import {styles} from './styles';
 import FastImage from 'react-native-fast-image';
-import {checkIcon, successIcon} from '../../../../assets/icons';
-import { ScrollView } from 'react-native-gesture-handler';
+import {checkIcon, successIcon} from '../../../assets/icons';
+import {ScrollView} from 'react-native-gesture-handler';
 
 const CustomerCard = ({
   id,
@@ -13,7 +13,6 @@ const CustomerCard = ({
   date,
   completed,
   onpress,
-
 }: {
   id: number;
   name: string;
@@ -23,8 +22,7 @@ const CustomerCard = ({
   onpress: () => void;
 }) => {
   return (
-    
-       <View style={styles.mainView}>
+    <View style={styles.mainView}>
       <Pressable
         onPress={onpress}
         style={
@@ -46,11 +44,8 @@ const CustomerCard = ({
       <View style={{marginTop: RF(25), marginRight: RF(15)}}>
         <Text style={styles.showdate}>{date}</Text>
       </View>
-      
     </View>
-   
-   
-    );
+  );
 };
 
 export default CustomerCard;

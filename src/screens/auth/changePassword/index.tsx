@@ -11,11 +11,11 @@ import {
 import FastImage from 'react-native-fast-image';
 import {signIn} from '../../../assets/images';
 import {styles} from './styles';
-import {COLORS} from '../../shared/theme/colors';
+import {COLORS} from '../../../shared/theme/colors';
 import CheckBox from 'react-native-check-box';
 import {arrowIcon, lockIcon} from '../../../assets/icons';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import CustomInput from '../../shared/components/customInput';
+import CustomInput from '../../../shared/components/customInput';
 const ChangePassword = ({navigation}: any) => {
   const [isChecked, setIsChecked] = useState(false);
   return (
@@ -57,13 +57,12 @@ const ChangePassword = ({navigation}: any) => {
           textContentType="password"
         />
       </View>
-      <View>
-        <TouchableOpacity
-          style={styles.signInBtn}
-          onPress={() => navigation.navigate('PasswordUpdate')}>
-          <Text style={styles.teststyles}>Confirm New Password</Text>
-        </TouchableOpacity>
-      </View>
+
+      <TouchableOpacity
+        style={styles.signInBtn}
+        onPress={() => navigation.navigate('PasswordUpdate')}>
+        <Text style={styles.teststyles}>Confirm New Password</Text>
+      </TouchableOpacity>
     </KeyboardAwareScrollView>
   );
 };

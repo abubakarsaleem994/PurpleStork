@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
-import {RF, WP} from '../../../../screens/shared/theme/responsive';
-import {COLORS} from '../../../../screens/shared/theme/colors';
-import {FONTS} from '../../../../screens/shared/theme/fonts';
+import {RF, WP} from '../../theme/responsive';
+import {COLORS} from '../../theme/colors';
+import {FONTS} from '../../theme/fonts';
 
 export const styles = StyleSheet.create({
   touchableOpacity: {

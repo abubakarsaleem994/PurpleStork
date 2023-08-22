@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react';
 import {View, Text, FlatList} from 'react-native';
-import CustomerCard from '../../shared/components/customerCard';
-import CustomAlert from '../../shared/components/customAlert';
+import CustomerCard from '../../../shared/components/customerCard';
+import CustomAlert from '../../../shared/components/customAlert';
 const CustomersCards = ({completed}: {completed: boolean}) => {
   const [pendingCards, setPendingCard] = useState([
     {
@@ -148,7 +148,6 @@ const CustomersCards = ({completed}: {completed: boolean}) => {
           onYesPress={handler}
         />
       ) : null}
-    
     </View>
   );
 };

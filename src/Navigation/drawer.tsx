@@ -1,43 +1,46 @@
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import React from 'react';
-import {StatusBar, Text, TouchableOpacity, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import FastImage from 'react-native-fast-image';
+import 'react-native-gesture-handler';
+import {useDispatch, useSelector} from 'react-redux';
 import {acrossIcon, iconPrivacyPolicy, loginIcon} from '../assets/icons';
-import CustomerScreen from '../screens/general/driverScreen';
+import {resetAuth} from '../shared/redux/authSlice';
+import CustomerScreen from '../screens/general/customerScreen';
+import DriverScreen from '../screens/general/driverScreen';
 import Privacy from '../screens/general/privacy Policy';
 import TermOfServices from '../screens/general/termOfServices';
-import CustomDrawer from '../screens/shared/components/customDrawer';
-import {COLORS} from '../screens/shared/theme/colors';
-import {RF} from '../screens/shared/theme/responsive';
+import CustomDrawer from '../shared/components/customDrawer';
+import {COLORS} from '../shared/theme/colors';
+import {RF} from '../shared/theme/responsive';
 import {styles} from './drawerStyles';
-import 'react-native-gesture-handler';
 
 const Drawer = createDrawerNavigator();
 
 function CustomDrawerContent({navigation}: any) {
+  const dispatch = useDispatch();
   return (
-    <View
+    <SafeAreaView
       style={{
         width: '100%',
 
         backgroundColor: COLORS.Purple,
         flex: 1,
       }}>
-      <View style={{marginTop: RF(68)}}>
-        <View style={styles.textView}>
-          <Text style={styles.text}>My Profile</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('Customer')}>
-            <FastImage
-              source={acrossIcon}
-              resizeMode={FastImage.resizeMode.stretch}
-              style={styles.crossIcon}
-            />
-          </TouchableOpacity>
-        </View>
-        <View>
-          <Text style={styles.text1}>Beby Jovanca</Text>
-          <Text style={styles.text2}>jovanca@gmail.com</Text>
-        </View>
+      <View style={styles.textView}>
+        <Text style={styles.text}>My Profile</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('User')}>
+          <FastImage
+            source={acrossIcon}
+            resizeMode={FastImage.resizeMode.stretch}
+            style={styles.crossIcon}
+          />
+        </TouchableOpacity>
+      </View>
+      <View>
+        <Text style={styles.text1}>Beby Jovanca</Text>
+        <Text style={styles.text2}>jovanca@gmail.com</Text>
       </View>
       <View
         style={{
@@ -65,15 +68,18 @@ function CustomDrawerContent({navigation}: any) {
             leftIcon={loginIcon}
             textShow={'Log out'}
             onPress={() => {
-              navigation.navigate('Login');
+              dispatch(resetAuth());
             }}
           />
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 const MyDrawer = () => {
+  const {
+    auth: {user},
+  } = useSelector((state: any) => state.root);
   return (
     <Drawer.Navigator
       screenOptions={{
@@ -89,9 +95,12 @@ const MyDrawer = () => {
       }}
       useLegacyImplementation
       drawerContent={props => <CustomDrawerContent {...props} />}
-      initialRouteName="Customer">
+      initialRouteName="User">
       <Drawer.Screen name="Privacy Policy" component={Privacy} />
-      <Drawer.Screen name="Customer" component={CustomerScreen} />
+      <Drawer.Screen
+        name="User"
+        component={user?.role === 'Customer' ? CustomerScreen : DriverScreen}
+      />
       <Drawer.Screen name="Terms of Services" component={TermOfServices} />
     </Drawer.Navigator>
   );

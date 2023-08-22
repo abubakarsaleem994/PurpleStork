@@ -7,7 +7,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import FastImage from 'react-native-fast-image';
-import {chevronIcon} from '../../../../assets/icons';
+import {chevronIcon} from '../../../assets/icons';
 import {RF} from '../../theme/responsive';
 import {styles} from './styles';
 

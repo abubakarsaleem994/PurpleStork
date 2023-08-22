@@ -1,33 +1,32 @@
 import React from 'react';
-import {Pressable, Text} from 'react-native';
-import {styles} from './styles';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {StatusBar} from 'react-native';
-import {View} from 'react-native';
-import {RF} from '../../shared/theme/responsive';
-import {COLORS} from '../../shared/theme/colors';
+import {Pressable, StatusBar, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
-import {arrowLeftIcon} from '../../../assets/icons';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {COLORS} from '../../../shared/theme/colors';
+import {RF} from '../../../shared/theme/responsive';
+import {styles} from './styles';
+import {hammburgerIcon} from '../../../assets/icons';
 
 const CustomerScreen = ({navigation}: any) => {
   return (
-    <SafeAreaView style={{backgroundColor: COLORS.GREEN, flex: 1}}>
-      <StatusBar
-        barStyle="dark-content"
-        translucent
-        backgroundColor="transparent"
-      />
-      <View style={{alignItems: 'flex-end', marginEnd: RF(20)}}>
-        <View style={styles.toolbarView}>
-          <Pressable onPress={() => navigation.navigate('Login')}>
-            <FastImage
-              source={arrowLeftIcon}
-              style={{width: RF(17), height: RF(9.7)}}
-            />
-          </Pressable>
-        </View>
-      </View>
-    </SafeAreaView>
+    <>
+      <SafeAreaView
+        style={{backgroundColor: COLORS.GREEN, flex: 1, position: 'relative'}}>
+        <StatusBar
+          barStyle="dark-content"
+          translucent
+          backgroundColor="transparent"
+        />
+        <Pressable
+          onPress={() => navigation.openDrawer()}
+          style={styles.toolbarView}>
+          <FastImage
+            source={hammburgerIcon}
+            style={{width: RF(17), height: RF(17)}}
+          />
+        </Pressable>
+      </SafeAreaView>
+    </>
   );
 };
 

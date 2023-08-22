@@ -1,21 +1,46 @@
-import React from 'react';
-import {
-  Pressable,
-  StatusBar,
-  Text,
-  TouchableHighlight,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import React, {useState} from 'react';
+import {Pressable, StatusBar, Text, TouchableOpacity, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {signIn} from '../../../assets/images';
-import CustomInput from '../../shared/components/customInput';
-import {COLORS} from '../../shared/theme/colors';
-import {RF} from '../../shared/theme/responsive';
-import {styles} from './styles';
+import {useDispatch} from 'react-redux';
 import {emailIcon, lockIcon} from '../../../assets/icons';
+import {signIn} from '../../../assets/images';
+import CustomInput from '../../../shared/components/customInput';
+import {COLORS} from '../../../shared/theme/colors';
+import {RF} from '../../../shared/theme/responsive';
+import {styles} from './styles';
+import {setAuth} from '../../../shared/redux/authSlice';
+import Toast from 'react-native-toast-message';
 const Login = ({navigation}: any) => {
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const dispatch = useDispatch();
+
+  const handleLogin = () => {
+    if (email === 'abubakar' && password === '12345') {
+      dispatch(
+        setAuth({
+          user: {
+            email: email,
+            password: password,
+            role: 'Customer',
+          },
+          isLoggedIn: true,
+        }),
+      );
+      Toast.show({
+        type: 'success',
+        text1: 'Success',
+        text2: 'Logged In Successfully',
+      });
+    } else {
+      Toast.show({
+        type: 'error',
+        text1: 'Error',
+        text2: 'Incorrect Credentails',
+      });
+    }
+  };
   return (
     <KeyboardAwareScrollView>
       <View>
@@ -41,29 +66,37 @@ const Login = ({navigation}: any) => {
           placeholder="Enter Email"
           leftIcon={emailIcon}
           textContentType="emailAddress"
+          value={email}
+          onChangeText={value => {
+            setEmail(value);
+          }}
         />
         <CustomInput
           placeholder="Enter Password"
           leftIcon={lockIcon}
           isPassword
-          secureTextEntry
+          value={password}
           textContentType="password"
+          onChangeText={value => {
+            setPassword(value);
+          }}
+          secureTextEntry
         />
-        <View>
-          <TouchableOpacity
-            style={styles.forgetpassword}
-            onPress={() => navigation.navigate('ForgetP')}>
-            <Text style={{color: COLORS.Purple}}>Forgot Password?</Text>
-          </TouchableOpacity>
-        </View>
+
+        <TouchableOpacity
+          style={styles.forgetpassword}
+          onPress={() => navigation.navigate('ForgetP')}>
+          <Text style={{color: COLORS.Purple}}>Forgot Password?</Text>
+        </TouchableOpacity>
       </View>
-      <View>
-        <Pressable
-          style={styles.signInBtn}
-          onPress={() => navigation.navigate('ForUser')}>
-          <Text style={styles.teststyles}>Sign In</Text>
-        </Pressable>
-      </View>
+
+      <Pressable
+        style={styles.signInBtn}
+        onPress={() => {
+          handleLogin();
+        }}>
+        <Text style={styles.teststyles}>Sign In</Text>
+      </Pressable>
 
       <View
         style={{
@@ -75,9 +108,6 @@ const Login = ({navigation}: any) => {
         <Text style={{color: COLORS.BLACK}}>have an account?</Text>
         <Pressable onPress={() => navigation.navigate('SignUp')}>
           <Text style={{color: COLORS.Purple}}>Sign Up</Text>
-        </Pressable>
-        <Pressable onPress={() => navigation.navigate('Map')}>
-          <Text style={{color: COLORS.GREEN}}>Map</Text>
         </Pressable>
       </View>
     </KeyboardAwareScrollView>

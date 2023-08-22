@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
-import {RF, WP} from '../../shared/theme/responsive';
-import {COLORS} from '../../shared/theme/colors';
+import {RF, WP} from '../../../shared/theme/responsive';
+import {COLORS} from '../../../shared/theme/colors';
 
 export const styles = StyleSheet.create({
   updateView: {

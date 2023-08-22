@@ -6,8 +6,8 @@ const Stack = createNativeStackNavigator<any>();
 
 const MainStack = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Drawer" component={MyDrawer} />
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="Home" component={MyDrawer} />
     </Stack.Navigator>
   );
 };

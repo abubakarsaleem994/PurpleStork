@@ -1,29 +1,15 @@
 import React, {useState} from 'react';
-import {
-  Pressable,
-  StatusBar,
-  Text,
-  TextInput,
-  TouchableHighlight,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Pressable, StatusBar, Text, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import {signIn} from '../../../assets/images';
 import {styles} from './styles';
-import {COLORS} from '../../shared/theme/colors';
+import {COLORS} from '../../../shared/theme/colors';
 import CheckBox from 'react-native-check-box';
-import {
-  emailIcon,
-  eyeoffIcon,
-  lockIcon,
-  phoneIcon,
-  userIcon,
-} from '../../../assets/icons';
+import {emailIcon, lockIcon, phoneIcon, userIcon} from '../../../assets/icons';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {RF, WP} from '../../shared/theme/responsive';
-import {FONTS} from '../../shared/theme/fonts';
-import CustomInput from '../../shared/components/customInput';
+import {RF, WP} from '../../../shared/theme/responsive';
+import {FONTS} from '../../../shared/theme/fonts';
+import CustomInput from '../../../shared/components/customInput';
 const SignUp = ({navigation}: any) => {
   const [isChecked, setIsChecked] = useState(false);
   return (
@@ -71,7 +57,7 @@ const SignUp = ({navigation}: any) => {
         <View
           style={{flexDirection: 'row', flexWrap: 'wrap', marginTop: RF(30)}}>
           <CheckBox
-            style={{height: RF(24), width: RF(24)}}
+            style={{height: RF(20), width: RF(20)}}
             isChecked={isChecked}
             onClick={() => {
               setIsChecked(!isChecked);

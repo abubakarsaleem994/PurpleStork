@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
-import {COLORS} from '../../shared/theme/colors';
-import {FONTS} from '../../shared/theme/fonts';
-import {RF} from '../../shared/theme/responsive';
+import {COLORS} from '../../../shared/theme/colors';
+import {FONTS} from '../../../shared/theme/fonts';
+import {RF} from '../../../shared/theme/responsive';
 
 export const styles = StyleSheet.create({
   main: {backgroundColor: COLORS.WHITE, flex: 1},
