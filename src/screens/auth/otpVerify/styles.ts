@@ -58,22 +58,7 @@ export const styles = StyleSheet.create({
     marginEnd: RF(22),
     borderRadius: RF(8),
   },
-  //  signInBtn: {
-  //   backgroundColor: COLORS.Purple,
-  //   margin: RF(10),
-  //   gap: RF(10),
-  //   width: RF(330),
-  //   height: RF(48),
-  //   paddingTop: RF(10),
-  //   paddingBottom: RF(10),
-  //   paddingHorizontal: RF(28),
-  //   paddingVertical: RF(28),
-  //   borderRadius: RF(8),
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  //   flexShrink: RF(0),
-  //   display: 'flex',
-  // },
+  showEmailText: {color: COLORS.Grey, marginVertical: 12},
 
   eyeoff: {
     height: RF(20),
@@ -93,4 +78,5 @@ export const styles = StyleSheet.create({
     marginHorizontal: RF(30),
   },
   checkBox1: {color: COLORS.Purple, fontFamily: FONTS.BOLD},
+  textColor: {color: COLORS.BLACK},
 });

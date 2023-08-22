@@ -12,25 +12,6 @@ export const styles = StyleSheet.create({
     marginHorizontal: RF(16),
     marginTop: RF(10),
     flexDirection: 'row',
-
-  },
-  nonSelectedcheckBoxView: {
-    borderRadius: RF(2),
-    width: RF(20),
-    height: RF(20),
-    backgroundColor: COLORS.bgcolorCheckBox,
-    marginTop: RF(16),
-    marginLeft: RF(16),
-  },
-  selectedcheckBoxView: {
-    borderRadius: RF(2),
-    width: RF(20),
-    height: RF(20),
-    backgroundColor: COLORS.bgColorChecked,
-    marginTop: RF(16),
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginLeft: RF(16),
   },
   showdate: {
     fontSize: RF(10),
@@ -42,7 +23,7 @@ export const styles = StyleSheet.create({
   textView: {
     marginTop: RF(16),
     marginLeft: RF(8),
-   
+
     flex: 1,
   },
   nameText: {
@@ -51,4 +32,5 @@ export const styles = StyleSheet.create({
     color: COLORS.BLACK,
   },
   phoneText: {fontFamily: FONTS.Regular, color: COLORS.Grey, marginTop: RF(5)},
+  checkboxContainer: {marginLeft: RF(16), marginTop: RF(10)},
 });

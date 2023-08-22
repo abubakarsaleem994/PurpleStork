@@ -11,6 +11,7 @@ import {RF} from '../../../shared/theme/responsive';
 import {styles} from './styles';
 import {setAuth} from '../../../shared/redux/authSlice';
 import Toast from 'react-native-toast-message';
+import {SafeAreaView} from 'react-native-safe-area-context';
 const Login = ({navigation}: any) => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -42,75 +43,75 @@ const Login = ({navigation}: any) => {
     }
   };
   return (
-    <KeyboardAwareScrollView>
-      <View>
-        <StatusBar
-          barStyle="dark-content"
-          translucent
-          backgroundColor="transparent"
-        />
-        <FastImage
-          source={signIn}
-          resizeMode={FastImage.resizeMode.stretch}
-          style={styles.image}
-        />
-      </View>
-      <View style={styles.textView}>
-        <Text style={styles.textSignUp}>Welcome Back!</Text>
-        <Text style={{color: COLORS.Grey, marginVertical: 12}}>
-          Sign In to your account
-        </Text>
-      </View>
-      <View style={styles.contentContainer}>
-        <CustomInput
-          placeholder="Enter Email"
-          leftIcon={emailIcon}
-          textContentType="emailAddress"
-          value={email}
-          onChangeText={value => {
-            setEmail(value);
-          }}
-        />
-        <CustomInput
-          placeholder="Enter Password"
-          leftIcon={lockIcon}
-          isPassword
-          value={password}
-          textContentType="password"
-          onChangeText={value => {
-            setPassword(value);
-          }}
-          secureTextEntry
-        />
+    <SafeAreaView>
+      <KeyboardAwareScrollView>
+        <View>
+          <StatusBar
+            barStyle="dark-content"
+            translucent
+            backgroundColor="transparent"
+          />
+          <FastImage
+            source={signIn}
+            resizeMode={FastImage.resizeMode.stretch}
+            style={styles.image}
+          />
+        </View>
+        <View style={styles.textView}>
+          <Text style={styles.textSignUp}>Welcome Back!</Text>
+          <Text style={{color: COLORS.Grey, marginVertical: 12}}>
+            Sign In to your account
+          </Text>
+        </View>
+        <View style={styles.contentContainer}>
+          <CustomInput
+            placeholder="Enter Email"
+            leftIcon={emailIcon}
+            textContentType="emailAddress"
+            value={email}
+            onChangeText={value => {
+              setEmail(value);
+            }}
+          />
+          <CustomInput
+            placeholder="Enter Password"
+            leftIcon={lockIcon}
+            isPassword
+            value={password}
+            textContentType="password"
+            onChangeText={value => {
+              setPassword(value);
+            }}
+            secureTextEntry
+          />
+          <TouchableOpacity
+            style={styles.forgetpassword}
+            onPress={() => navigation.navigate('ForgetP')}>
+            <Text style={{color: COLORS.Purple}}>Forgot Password?</Text>
+          </TouchableOpacity>
+        </View>
 
-        <TouchableOpacity
-          style={styles.forgetpassword}
-          onPress={() => navigation.navigate('ForgetP')}>
-          <Text style={{color: COLORS.Purple}}>Forgot Password?</Text>
-        </TouchableOpacity>
-      </View>
-
-      <Pressable
-        style={styles.signInBtn}
-        onPress={() => {
-          handleLogin();
-        }}>
-        <Text style={styles.teststyles}>Sign In</Text>
-      </Pressable>
-
-      <View
-        style={{
-          alignSelf: 'center',
-          flexDirection: 'row',
-          marginTop: RF(25),
-          marginBottom: RF(64),
-        }}>
-        <Text style={{color: COLORS.BLACK}}>have an account?</Text>
-        <Pressable onPress={() => navigation.navigate('SignUp')}>
-          <Text style={{color: COLORS.Purple}}>Sign Up</Text>
+        <Pressable
+          style={styles.signInBtn}
+          onPress={() => {
+            handleLogin();
+          }}>
+          <Text style={styles.teststyles}>Sign In</Text>
         </Pressable>
-      </View>
-    </KeyboardAwareScrollView>
+
+        <View
+          style={styles.showTextView}>
+          <Text style={styles.textColor}>have an account?</Text>
+          <Pressable onPress={() => navigation.navigate('SignUp')}>
+            <Text style={{color: COLORS.Purple}}>Sign Up</Text>
+          </Pressable>
+        </View>
+      </KeyboardAwareScrollView>
+      <Pressable onPress={()=>navigation.navigate('')}>
+         
+      </Pressable>
+    </SafeAreaView>
+     
   );
 };
 export default Login;
