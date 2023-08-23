@@ -92,4 +92,10 @@ export const styles = StyleSheet.create({
   },
   signInColor: {color: COLORS.Purple},
   showSignUpText1: {color: COLORS.Grey},
+  errors: {
+    fontSize: RF(14),
+    color: COLORS.RED,
+    fontFamily: FONTS.BOLD,
+    marginTop: RF(5),
+  },
 });

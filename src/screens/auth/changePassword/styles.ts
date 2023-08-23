@@ -83,4 +83,10 @@ export const styles = StyleSheet.create({
     marginHorizontal: RF(30),
   },
   checkBox1: {color: COLORS.Purple, fontFamily: FONTS.BOLD},
+  errors: {
+    fontSize: RF(14),
+    color: COLORS.RED,
+    fontFamily: FONTS.BOLD,
+    marginTop: RF(5),
+  },
 });

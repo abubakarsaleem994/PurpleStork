@@ -83,4 +83,10 @@ export const styles = StyleSheet.create({
     marginBottom: RF(64),
   },
   textColor: {color: COLORS.BLACK},
+  errors: {
+    fontSize: RF(14),
+    color: COLORS.RED,
+    fontFamily: FONTS.BOLD,
+    marginTop: RF(5),
+  },
 });

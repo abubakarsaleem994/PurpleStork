@@ -34,6 +34,7 @@ export const styles = StyleSheet.create({
     marginStart: RF(23),
     alignSelf: 'center',
   },
+  showText: {color: COLORS.Grey, marginVertical: 12},
   teststyles: {
     color: COLORS.WHITE,
     fontSize: RF(15),
@@ -79,4 +80,10 @@ export const styles = StyleSheet.create({
     marginHorizontal: RF(30),
   },
   checkBox1: {color: COLORS.Purple, fontFamily: FONTS.BOLD},
+  errors: {
+    fontSize: RF(14),
+    color: COLORS.RED,
+    fontFamily: FONTS.BOLD,
+    marginTop: RF(5),
+  },
 });

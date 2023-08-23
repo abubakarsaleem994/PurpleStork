@@ -6,6 +6,7 @@ import {COLORS} from '../../../shared/theme/colors';
 import {successIcon} from '../../../assets/icons';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {StatusBar} from 'react-native';
+
 import {SafeAreaView} from 'react-native-safe-area-context';
 const PasswordUpdate = ({navigation}: any) => {
   const {Purple} = COLORS;

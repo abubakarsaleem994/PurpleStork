@@ -99,7 +99,7 @@ const MyDrawer = () => {
       <Drawer.Screen name="Privacy Policy" component={Privacy} />
       <Drawer.Screen
         name="User"
-        component={user?.role === 'Customer' ? DriverScreen : CustomerScreen}
+        component={user?.role === 'Customer' ? CustomerScreen : DriverScreen}
       />
       <Drawer.Screen name="Terms of Services" component={TermOfServices} />
     </Drawer.Navigator>
